@@ -1,4 +1,4 @@
-package by.andersen.laboratory.microservice.authorization.config;
+package by.andersen.laboratory.microservice.authorization.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("by.andersen.laboratory.microservice.users.controller"))
+                .apis(RequestHandlerSelectors.basePackage("by.andersen.laboratory.microservice.authorization.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

@@ -1,6 +1,8 @@
 package by.andersen.laboratory.microservice.authorization.controller;
 
 import by.andersen.laboratory.microservice.authorization.model.ClientDto;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +12,8 @@ import static org.springframework.http.HttpStatus.OK;
 
 @RestController
 public class ClientController extends ErrorControllerHandler {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ClientController.class);
 
     @GetMapping("/client/get/list")
     public ResponseEntity<List<ClientDto>> getAllClients() {
